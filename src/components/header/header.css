@@ -1,0 +1,19 @@
+nav a {
+    margin-right: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: x-large;
+    color: black;
+
+}
+
+.navbar {
+    box-shadow: 0px 0px 30px grey;
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+}
