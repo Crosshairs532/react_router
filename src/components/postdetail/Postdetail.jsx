@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const Postdetail = () => {
     const det = useLoaderData();
+    console.log(det, 'deeettttt')
     const navigate = useNavigate()
     const { title, body } = det
     const handlenav = () => {

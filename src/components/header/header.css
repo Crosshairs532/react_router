@@ -17,3 +17,7 @@ nav a {
     justify-content: center;
 
 }
+
+.navbar a.active {
+    background-color: brown;
+}
