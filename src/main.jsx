@@ -10,10 +10,14 @@ import Contact from './components/contact/Contact';
 import User from './components/User/User.jsx';
 import UserDetail from './userDetail/UserDetail.jsx';
 import Posts from './components/Posts/Posts.jsx';
+import Post from './post/Post';
+import Postdetail from './components/postdetail/Postdetail';
+import Error from './components/error/Error';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <Error></ Error>,
     children: [{
       path: '/about',
       element: <About></About>,
@@ -36,6 +40,11 @@ const router = createBrowserRouter([
       path: '/posts',
       loader: () => fetch('https://jsonplaceholder.typicode.com/posts'),
       element: <Posts></Posts>
+    },
+    {
+      path: '/posts/:id',
+      loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
+      element: <Postdetail></Postdetail>
     }
     ]
     // >>>>>>> react router basic nav bar linking done
