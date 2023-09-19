@@ -1,26 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-<<<<<<< HEAD
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+// import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-
-  },
-  {
-    path: '/HOme'
-    ,
-    element: <h1>i am in the home page</h1>
-=======
-// import App from './App.jsx'
 import Home from './components/Home/Home';
 import './index.css'
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
+import User from './components/User/User.jsx';
+import UserDetail from './userDetail/UserDetail.jsx';
+import Posts from './components/Posts/Posts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,10 +20,25 @@ const router = createBrowserRouter([
     },
     {
       path: '/contact',
-      element: <Contact></Contact>
+      element: <Contact></Contact>,
+    }, {
+      path: '/Users',
+      loader: () => fetch('https://jsonplaceholder.typicode.com/users'),
+      element: <User></User>
+
+    },
+    {
+      path: '/users/:useId',
+      loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.useId}`),
+      element: <UserDetail></UserDetail>
+    },
+    {
+      path: '/posts',
+      loader: () => fetch('https://jsonplaceholder.typicode.com/posts'),
+      element: <Posts></Posts>
     }
     ]
->>>>>>> react router basic nav bar linking done
+    // >>>>>>> react router basic nav bar linking done
   }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

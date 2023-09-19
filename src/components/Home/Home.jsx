@@ -9,8 +9,6 @@ const Home = () => {
 
             <Header>
             </Header>
-            <h2>You are in the home page now</h2>
-
             <Outlet></Outlet>
             <Footer></Footer>
 
